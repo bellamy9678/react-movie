@@ -6,13 +6,11 @@ import { ComponentTitle } from './components/ComponentTitle.tsx';
 
 const App = () => {
   return (
-    <>
-      <Box p={36}>
-        <FunctionalTitle />
-        <PureTitle />
-        <ComponentTitle />
-      </Box>
-    </>
+    <Box p={36}>
+      <FunctionalTitle />
+      <PureTitle />
+      <ComponentTitle />
+    </Box>
   );
 }
 
