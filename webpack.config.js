@@ -1,9 +1,12 @@
 const path = require('path');
-const htmlPlugin = require('html-webpack-plugin');
+const HTMLLoader = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
-  target: 'web',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, '/dist'),
+  },
   module: {
     rules: [
       {
@@ -13,11 +16,12 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HTMLLoader({
+      template: './public/index.html'
+    })
+  ],
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-  },
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
 };
