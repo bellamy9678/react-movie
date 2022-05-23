@@ -1,10 +1,7 @@
 {
   "title": "Hello World!",
   "prefix": {
-    "pure": "React.PureComponent",
-    "func": "Functional component",
-    "create": "React.createElement",
-    "component": "React.Component"    
+    "func": "Functional component"
   }
 }
 
