@@ -4,8 +4,8 @@ const HTMLLoader = require('html-webpack-plugin');
 module.exports = {
   entry: './src/index.tsx',
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, '/dist'),
+    filename: "[name].js",
+    path: path.resolve(__dirname, 'build'),
   },
   module: {
     rules: [
@@ -24,4 +24,20 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          name: "node_vendors",
+          test: /node_modules/,
+          chunks: "all",
+        },
+        common: {
+          test: /\.\/src\/components/,
+          chunks: "all",
+          minSize: 0,
+        },
+      },
+    },
+  }
 };
