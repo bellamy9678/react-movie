@@ -1,6 +1,6 @@
 import React from "react";
 import { Heading } from "@chakra-ui/layout";
-import { translations } from "../utils";
+import { translations } from "../translations";
 
 export const Title = () => {
   return (
