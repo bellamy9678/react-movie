@@ -15,6 +15,10 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
   plugins: [
@@ -32,7 +36,6 @@ module.exports = {
           name: "node_vendors",
           test: /node_modules/,
           chunks: "all",
-          
         },
         common: {
           test: /\.\/src\/components/,
